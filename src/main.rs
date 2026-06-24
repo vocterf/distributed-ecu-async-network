@@ -2,50 +2,84 @@ use std::time::Duration;
 use tokio::sync::mpsc;
 use tokio::time::sleep;
 
-#[derive(Debug)]
-struct CanFrame {
-    id: u32,
-    payload: u32
+struct TyrePayload {
+    id: String,
+    pressure: f32,
 }
 
 #[tokio::main]
 async fn main() {
-    let (tx_gateway, mut rx_dashboard) = mpsc::channel::<CanFrame>(32);
+    let (tx_gateway, mut rx_dashboard) = mpsc::channel::<TyrePayload>(4);
 
-    let tx_oil_sensor = tx_gateway.clone();
-    let tx_rpm_sensor = tx_gateway;
+    let tx_fl_sensor = tx_gateway.clone();
+    let tx_fr_sensor = tx_gateway.clone();
+    let tx_rl_sensor = tx_gateway.clone();
+    let tx_rr_sensor = tx_gateway.clone();
 
     tokio::spawn(async move {
         loop {
-            let frame = CanFrame {id: 0x120, payload: 4};
-
-            if tx_oil_sensor.send(frame).await.is_err() {
-                println!("[ERR]: Oil sensor channel closed!");
+            let frame = TyrePayload {
+                id: String::from("Front Left"),
+                pressure: 2.2,
+            };
+            if tx_fl_sensor.send(frame).await.is_err() {
+                println!("fl channel is closed");
                 break;
             }
-            sleep(Duration::from_millis(800)).await;
+            sleep(Duration::from_millis(500)).await;
         }
     });
 
     tokio::spawn(async move {
         loop {
-            let frame = CanFrame {id: 0x2A0, payload: 2200};
-
-            if tx_rpm_sensor.send(frame).await.is_err() {
-                println!("[ERR]: RPM sensor channel closed!");
+            let frame = TyrePayload {
+                id: String::from("Front Right"),
+                pressure: 2.2,
+            };
+            if tx_fr_sensor.send(frame).await.is_err() {
+                println!("fr channel is closed");
                 break;
             }
-            sleep(Duration::from_millis(300)).await;
+            sleep(Duration::from_millis(500)).await;
         }
     });
 
-    println!("[DASHBOARD]: Booting interface... Listening for frames...");
+    tokio::spawn(async move {
+        loop {
+            let frame = TyrePayload {
+                id: String::from("Rear Left"),
+                pressure: 2.2,
+            };
+            if tx_rl_sensor.send(frame).await.is_err() {
+                println!("rl channel is closed");
+                break;
+            }
+            sleep(Duration::from_millis(500)).await;
+        }
+    });
+
+    tokio::spawn(async move {
+        let mut pressure = 2.2;
+        loop {
+            let frame = TyrePayload {
+                id: String::from("Rear Right"),
+                pressure,
+            };
+            if tx_rr_sensor.send(frame).await.is_err() {
+                println!("rr channel is closed");
+                break;
+            }
+            pressure -= 0.1;
+            if pressure <= 0.1 {
+                pressure = 2.2
+            }
+            sleep(Duration::from_millis(500)).await;
+        }
+    });
+
+    drop(tx_gateway);
 
     while let Some(frame) = rx_dashboard.recv().await {
-        match frame.id {
-            0x120 => println!("[DISPLAY] Oil Pressure: {} bar", frame.payload),
-            0x2A0 => println!("[DISPLAY] Engine Speed: {} RPM", frame.payload),
-            _ => println!("[DISPLAY] Unknown frame ID: {:#X}", frame.id),
-        }
+        println!("{}: {:.2}", frame.id, frame.pressure);
     }
 }
