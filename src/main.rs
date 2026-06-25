@@ -1,33 +1,47 @@
 use std::time::Duration;
-use tokio::time::{sleep, timeout};
+use tokio::sync::mpsc;
+use tokio::time::sleep;
 
-
-async fn request_ecu_status(processing_time_ms: u64) -> String {
-    println!("[ECU]: Request received.");
-
-    sleep(Duration::from_millis(processing_time_ms)).await;
-
-    String::from("ECU_STATUS: ACTIVE, NO_ERRORS")
-}
-
-
-
-#[tokio::main]
+#[tokio::main(flavor = "current_thread")]
 async fn main() {
+    println!("=== ASYNCHRONOUS CHANNELS SIMULATION START ===");
 
-    let ecu_delay = 1500;
+    let (tx, mut rx) = mpsc::channel::<u32>(5);
 
-    println!("Sending request... It has 1000ms to respond.");
+    let tx_sensor_a = tx.clone();
+    let tx_sensor_b = tx; 
 
-    let diagnostic_result = timeout(Duration::from_millis(1000), request_ecu_status(ecu_delay)).await ;
-
-    match diagnostic_result {
-        Ok(ecu_message) => {
-            println!("\n[SUCCESS]: Response in time.");
-            println!("[DASHBOARD]: Data: -> {}", ecu_message);
+    tokio::spawn(async move {
+        let simulated_speeds = [30, 32, 35];
+        for speed in simulated_speeds {
+            println!("[Sensor A: Wheel Speed] Emitting: {} km/h", speed);
+            
+            if tx_sensor_a.send(speed).await.is_err() {
+                eprintln!("[Sensor A] Channel closed by receiver. Terminating task.");
+                break;
+            }
+            sleep(Duration::from_millis(40)).await;
         }
-        Err(_) => {
-            println!("\n[TIMEOUT CRITICAL]: Timeout.");
+    });
+
+    tokio::spawn(async move {
+        let simulated_pressures = [150, 200];
+        for pressure in simulated_pressures {
+            println!("  [Sensor B: Brake Fluid] Emitting: {} kPa", pressure);
+            
+            if tx_sensor_b.send(pressure).await.is_err() {
+                eprintln!("  [Sensor B] Channel closed by receiver. Terminating task.");
+                break;
+            }
+            sleep(Duration::from_millis(60)).await;
         }
+    });
+
+    println!("[ECU Core] Initializing consumer event loop...");
+
+    while let Some(bus_packet) = rx.recv().await {
+        println!("[ECU Core] Bus Intercept -> Processing data packet: {}", bus_packet);
     }
+
+    println!("=== ASYNCHRONOUS CHANNELS SIMULATION END ===");
 }
