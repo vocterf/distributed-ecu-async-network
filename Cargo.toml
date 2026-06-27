@@ -6,3 +6,10 @@ edition = "2024"
 [dependencies]
 tokio = {version = "1.5", features = ["full"]}
 socketcan = {version = "3.0", features = ["tokio"]}
+bitvec = "1.1.1"
+embedded-can = "0.4.1"
+
+[build-dependencies]
+dbc-codegen2 = "0.1"
+anyhow = "1.0"
+bitvec = "1.1.1"
