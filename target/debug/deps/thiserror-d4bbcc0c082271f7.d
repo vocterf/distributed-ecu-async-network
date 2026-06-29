@@ -1,0 +1,14 @@
+/home/vocter/projects/distributed-ecu-async-network/target/debug/deps/thiserror-d4bbcc0c082271f7.d: /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /home/vocter/projects/distributed-ecu-async-network/target/debug/build/thiserror-4edeecf0dd90c32f/out/private.rs
+
+/home/vocter/projects/distributed-ecu-async-network/target/debug/deps/libthiserror-d4bbcc0c082271f7.rlib: /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /home/vocter/projects/distributed-ecu-async-network/target/debug/build/thiserror-4edeecf0dd90c32f/out/private.rs
+
+/home/vocter/projects/distributed-ecu-async-network/target/debug/deps/libthiserror-d4bbcc0c082271f7.rmeta: /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /home/vocter/projects/distributed-ecu-async-network/target/debug/build/thiserror-4edeecf0dd90c32f/out/private.rs
+
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs:
+/home/vocter/projects/distributed-ecu-async-network/target/debug/build/thiserror-4edeecf0dd90c32f/out/private.rs:
+
+# env-dep:OUT_DIR=/home/vocter/projects/distributed-ecu-async-network/target/debug/build/thiserror-4edeecf0dd90c32f/out
