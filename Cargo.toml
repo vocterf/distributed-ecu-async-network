@@ -5,7 +5,6 @@ members = [
 ]
 resolver = "2"
 
-# Tutaj zdefiniuj profile dla całego workspace
 [profile.dev]
 opt-level = 0
 debug = true

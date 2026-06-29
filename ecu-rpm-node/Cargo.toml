@@ -1,11 +1,11 @@
 [package]
 edition      = "2024"
-name         = "test"
+name         = "ecu-rpm-node"
 rust-version = "1.88"
 version      = "0.1.0"
 
 [[bin]]
-name = "test"
+name = "ecu-rpm-node"
 path = "./src/bin/main.rs"
 
 [dependencies]
@@ -21,6 +21,7 @@ esp-backtrace = { version = "0.19.0", features = [
   "println",
 ] }
 esp-println = { version = "0.17.0", features = ["esp32"] }
+xtensa-lx = "0.13.0"
 
 
 # For fine tuning these settings, please refer to https://doc.rust-lang.org/cargo/reference/profiles.html

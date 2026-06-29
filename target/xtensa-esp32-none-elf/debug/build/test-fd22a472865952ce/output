@@ -1,2 +1,0 @@
-cargo:rustc-link-arg=-Wl,--error-handling-script=/home/vocter/projects/distributed-ecu-async-network/target/debug/build/test-0f0b9e0115ee00e3/build-script-build
-cargo:rustc-link-arg=-Tlinkall.x

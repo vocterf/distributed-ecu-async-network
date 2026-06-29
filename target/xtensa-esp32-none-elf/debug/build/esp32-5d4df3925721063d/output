@@ -1,3 +1,0 @@
-cargo:rustc-link-search=/home/vocter/projects/distributed-ecu-async-network/target/xtensa-esp32-none-elf/debug/build/esp32-5d4df3925721063d/out
-cargo:rerun-if-changed=device.x
-cargo:rerun-if-changed=build.rs
