@@ -1,0 +1,17 @@
+target/
+**/target/
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+Cargo.lock
+
+*.bin
+*.elf
+*.map
+*.log
+
+.DS_Store
+Thumbs.db
