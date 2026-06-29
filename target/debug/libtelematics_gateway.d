@@ -1,0 +1,1 @@
+/home/vocter/projects/distributed-ecu-async-network/target/debug/libtelematics_gateway.rlib: /home/vocter/projects/distributed-ecu-async-network/telematics-gateway/build.rs /home/vocter/projects/distributed-ecu-async-network/telematics-gateway/src/can_matrix.rs /home/vocter/projects/distributed-ecu-async-network/telematics-gateway/src/lib.rs

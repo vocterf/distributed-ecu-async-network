@@ -1,0 +1,13 @@
+[target.xtensa-esp32-none-elf]
+runner = ".cargo/runner.sh"
+[env]
+
+[build]
+rustflags = [
+  "-C", "link-arg=-nostartfiles",
+]
+
+target = "xtensa-esp32-none-elf"
+
+[unstable]
+build-std = ["core"]

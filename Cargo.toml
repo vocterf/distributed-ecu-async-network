@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "telematics-gateway",
+    "ecu-rpm-node"
+]
+resolver = "2"
+
+# Tutaj zdefiniuj profile dla całego workspace
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+debug = false

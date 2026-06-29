@@ -1,0 +1,14 @@
+/home/vocter/projects/distributed-ecu-async-network/target/debug/deps/serde-40864bed1b9842bd.d: /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/vocter/projects/distributed-ecu-async-network/target/debug/build/serde-e7d257f56d466538/out/private.rs
+
+/home/vocter/projects/distributed-ecu-async-network/target/debug/deps/libserde-40864bed1b9842bd.rlib: /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/vocter/projects/distributed-ecu-async-network/target/debug/build/serde-e7d257f56d466538/out/private.rs
+
+/home/vocter/projects/distributed-ecu-async-network/target/debug/deps/libserde-40864bed1b9842bd.rmeta: /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/vocter/projects/distributed-ecu-async-network/target/debug/build/serde-e7d257f56d466538/out/private.rs
+
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/vocter/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/vocter/projects/distributed-ecu-async-network/target/debug/build/serde-e7d257f56d466538/out/private.rs:
+
+# env-dep:OUT_DIR=/home/vocter/projects/distributed-ecu-async-network/target/debug/build/serde-e7d257f56d466538/out
